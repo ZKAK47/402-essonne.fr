@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png"/>
+    <title>Les Traces de la ligne 402, de l'Essonne !</title>
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <style>
+        main::before {
+        content: '';
+        position: fixed;
+        inset: 0; /* Remplit parfaitement le parent */
+        background-image: url('/assets/images/plan/Plan_402.png');
+        z-index: -1; /* Sous le texte */
+        background-size: 50vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.5; /* Optionnel pour effet léger */
+        pointer-events: none; /* Ne gêne pas les interactions */
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+    <header>
+        <div class="main-line">
+            <div class="Bus-logo">
+            <img class="Logo" src="/assets/images/pictos/Bus.png" alt="BUS">
+			<img class="Logo" src="/assets/images/pictos/402.png" alt="402">
+        </div>
+            <h1 class="destination-titre">Épinay-sur-Orge <img class="Logotext" src="/assets/images/pictos/RER O.png"  alt="RER"> ⥋ Le Coudray-Montceaux — Terminal David Douillet</h1>
+        </div>
+    </header>
+	<section class="current-status">
+        <h2 style="font-family: 'RATP-Bold'  sans-serif;">Actuellement</h2>
+        <p class="date-info">(au 6 janvier 2025)</p>
+        <div class="route-container">
+            <div class="bloc image-overlay">
+                <img class="plan" src="/assets/images/plan/4220.png">
+                <div class="content">
+            <div class="mains-route">
+                <img class="Logo" src="/assets/images/pictos/4220.png"  alt="4220">
+                <p>Épinay-sur-Orge <img class="Logotext" src="/assets/images/pictos/RER O.png" alt="RER"> <strong>⥋</strong> Grigny Centre <img class="Logotext" src="/assets/images/pictos/RER O.png" alt="RER"></p>
+            </div></div>
+        </div>
+        <div class="bloc image-overlay">
+            <img class="plan" src="/assets/images/plan/4206.png">
+            <div class="content">
+        <div class="mains-route">
+                <img class="Logo" src="/assets/images/pictos/4206.png" alt="4206">
+                <p>Viry-Châtillon – La Treille <strong>⥋</strong> Corbeil-Essonnes <img class="Logotext" src="/assets/images/pictos/RER O.png"  alt="RER"></p>
+            </div></div>
+        </div>
+        <div class="bloc image-overlay">
+            <img class="plan" src="/assets/images/plan/4242.png">
+            <div class="content">
+            <div class="mains-route">
+                <img class="Logo" src="/assets/images/pictos/4242.png" alt="4242">
+                <p>Le Bras de Fer <img class="Logotext" src="/assets/images/pictos/RER O.png" alt="RER"> <strong>⥋</strong> Le Coudray-Montceaux</p>
+            </div></div>
+        </div>
+    </section>
+    <nav class="navigation">
+        <ul>
+            <a href="Desserte/index.html"><li>Desserte</li></a>
+            <a href="Histoire/index.html"><li>Histoire</li></a>
+            <a href="Fréquentation/index.html"><li>Fréquentation</li></a>
+			<a href="Quizz/index.html"><li>Quizz</li></a>
+        </ul>
+    </nav>
+    <main class="section" style="background-color: rgba(0, 0, 0, 0);">
+        <h1>C'est quoi le 402 ?</h1>
+        <div>
+        <p>C'est un bus à haut niveau de service traversant des communes denses en Essonne tel que Évry-Courcouronnes, c'est également la ligne la plus fréquentée
+            de grande couronne (et donc de l'Essonne) ce qui en fait une des lignes les plus importantes, d'ailleurs elle (<span class="Indice-bus" style="background: #E2001A; color: white;">4206</span>)sera bientôt remplacé par le <span class="Indice-bus" style="background: #D5C900; color: black;">Tzen4</span> et à été découpé 2 fois.
+            <br> Il existe aussi 3 bus 402 dans la région :
+            <ul style="background-color: rgba(0, 0, 0, 0);">
+                <li style="background-color: rgba(0, 0, 0, 0);">Le <div class="Indice-bus" style="background: #E2001A; color: white;">402</div> de l'Essonne (celui dont je vais parler)</li>
+                <li style="background-color: rgba(0, 0, 0, 0);">Le <div class="Indice-bus" style="background: #b0badb; color: black;">402</div> de Saint-Quentin-en-Yvelines (devenue <div class="Indice-bus" style="background: #98D4E2; color: black;">5132</div>)</li>
+                <li style="background-color: rgba(0, 0, 0, 0);">Le <div class="Indice-bus" style="background: #f28e42; color: black;">402</div> de Bièvres (ancienne ligne <div class="Indice-bus" style="background: #f28e42; color: white;">2</div>)</li>
+            </ul>
+            <h2>Bref c'est la <span class="Indice-bus" style="background: black; color: white;">ligne iconique de l'Essonne</span></h2>
+        </p>
+    </div>
+    </main>
+        <div class="section">
+            <h1>A propos du site</h1>
+            <p>Ce site n'a absolument aucune affiliation avec Île-de-France Mobilités, Keolis, TISSE ou toute autre entreprise de transport.</p>
+            <p>Il utilise la charte signalétique d'Île-de-France Mobilités placée sous licence 
+                <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/fr/" target="_blank">Creative Commons CC BY-NC-ND 3.0</a>.</p>
+            <p>Par ailleurs, ce site est actuellement en construction, des choses peuvent manquer.</p>
+            <p>Question, demandes ou réclamations ? <span class="contact" onclick="window.location.href='mailto:zkd80archive@gmail.com'">Contactez-moi</span>.</p>
+        </div>
+</body>
+<script src="/assets/scripts/disclaimer.js"></script>
+</html>

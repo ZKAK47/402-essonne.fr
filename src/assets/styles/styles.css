@@ -1,0 +1,977 @@
+.image{
+    float: right;
+}
+
+.main-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.Bus-logo {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.bloc {
+  position: relative; /* Important pour positionner les éléments internes */
+}
+
+/* Bloc avec image + contenu par dessus */
+.image-overlay {
+  width: 33%; /* Largeur fixe ou responsive selon besoin */
+  height: auto; /* Hauteur en rapport avec image */
+  overflow: hidden;
+}
+
+.image-overlay .plan {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pour remplir sans déformer */
+  display: block;
+  z-index: 0;
+}
+
+.image-overlay .Logo {
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+/* Contenu positionné au-dessus de l'image */
+.image-overlay .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Optionnel : fond semi-transparent pour le texte */
+}
+
+.Indice-bus {
+    font-weight: 700;
+    background: transparent;
+    color: #000000;
+    display: inline-block;
+    min-height: 1em;
+    min-width: 2.2em;
+    padding: .01em .20em;
+    margin-block: 0.1em;
+    text-align: center;
+    border-radius: 0.3em;
+    white-space: normal;
+    vertical-align: middle;
+}
+
+.active-tab {
+    background-color: #000000;
+    font-weight: bold;
+}
+
+/* Lien actif lors du scroll */
+.active-scroll {
+    border-bottom: 2px solid white;
+    font-weight: bold;
+}
+
+.en-tete {
+	display: flex;
+	justify-content: space-between;;
+	margin-top: 10px;
+}
+.collant {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.Logo {
+	height: 3.1em;
+}
+.Logotext {
+	height: auto;
+	width: auto;
+	max-height: 1em;
+	vertical-align: middle;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+nav li a.active {
+    border-bottom: 1px solid white;
+}
+
+.contact {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container {
+	display: flex;
+	justify-content: space-evenly;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+header {
+	background: #f8f9fa;
+}
+
+header h1 {
+	margin: 10px 0;
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+
+.section h1 {
+	margin: 10px 0;
+	font-size: 1.2em;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.header-nav {
+    position: -webkit-sticky; /* Support Safari */
+    position: sticky;
+    top: 0;
+	left: 0;
+    z-index: 99;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Effet d'ombre pour distinguer */
+    padding: 5px;
+}
+
+.header-nav nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-nav nav ul li {
+    margin: 0 1em;
+    padding-bottom: 5px;
+}
+
+.header-nav nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.header-nav nav ul li a:hover:not(.active) {
+    border-bottom: 1px solid white;
+}
+
+.header-nav nav ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+.destination-titre {
+    background-color: black;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.tabs-desserte {
+	display: flex;
+	justify-content: space-around;
+    gap: 32px;
+    max-width: 100%;
+}
+.updated {
+	color: #757575;
+	font-size: 0.8em;
+}
+
+[data-tab-content] {
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+
+.active[data-tab-content] {
+    display: block;
+}
+
+.plan {
+	width: 100%;           /* L'image occupe toute la largeur disponible */
+	height: auto;          /* L'image garde ses proportions d'origine */
+	max-width: 1300px;       /* L'image ne dépassera jamais la largeur de son conteneur */
+	max-height: 100%;     /* L'image ne dépassera pas la hauteur de la fenêtre du navigateur */
+	object-fit: contain;
+}
+
+.tabs {
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	border-bottom: 1px solid black;
+}
+
+.tab {
+	display: block;
+    box-sizing: content-box;
+    border-top-left-radius: 10pt;
+    border-top-right-radius: 10pt;
+	padding: 10px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid transparent; /* Bordure invisible par défaut */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border 0.1s ease-in-out;
+                transform: translateY(10px);
+}
+
+.tab:hover:not(.active) {
+	background-color: #d3d3d3;
+	cursor: pointer;
+    transform: translateY(-0.3px); /* Légère élévation */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
+}
+
+.tab:active:not(.active) {
+    transform: translateY(2px); /* Effet d'enfoncement */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Réduit l'ombre */
+	cursor: pointer;
+    border: 0.1px solid black; /* Bordure noire qui apparaît */
+}
+
+.tab.active {
+	background-color: #3498db;
+    color: #FFFFFF;
+}
+
+.tabs-container button {
+    border: none;
+    background-color: #AAA;
+}
+
+.tabs-container button.active {
+    background-color: #3498db;
+    color: #FFFFFF;
+}
+
+.subtabs {
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	border-bottom: 1px solid black;
+}
+
+.subtab {
+    display: block;
+    cursor: auto;
+    padding: 10px;
+    padding-top: 20px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 1;
+    border: 3px solid transparent; /* Bordure invisible par défaut */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border 0.1s ease-in-out;
+                transform: translateY(-13px);
+}
+
+.subtab:hover:not(.active) {
+    background-color: #d3d3d3;
+    transform: translateY(0.2px); /* Légère élévation vers le bas */
+    cursor: pointer;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
+}
+
+.subtab:active:not(.active) {
+    transform: translateY(-2px); /* Effet d'enfoncement vers le haut */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Réduit l'ombre */
+    cursor: pointer;
+    border: 0.1px solid black; /* Bordure noire qui apparaît */
+}
+
+.subtab.active {
+	background-color: #3498db;
+    color: #FFFFFF;
+}
+
+.subtab.NATP.active {
+    background-color: #67b4e7;
+}
+
+.subtab.RATP.active {
+    background-color: #00c4b4;
+}
+
+.navigation {
+	background-color: #C60800;
+	color: white;
+	width: 100wh;
+}
+
+.navigation ul {
+	list-style: none;
+    padding: 5px 5px;
+    gap: 5px;
+	display: flex;
+	justify-content: space-evenly;
+	object-fit: contain;
+}
+
+.navigation li {
+    position: relative;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    list-style: none;
+    padding: 0.5em 0.2em; /* Espacement autour du texte */
+}
+
+/* Animation uniquement si l'élément n'est pas actif */
+.navigation a:hover:not(.active)::after {
+    cursor: pointer;
+}
+
+.navigation a:hover:not(.active) {
+    background-color: #008050;
+    border-radius: 10px;
+    border-bottom: none;
+    transition: background-color 0.3s ease ;
+}
+
+.navigation a:active:not(.active) {
+    background-color: white;
+}
+
+.navigation a:active:not(.active) li {
+    color: #008050;
+}
+
+.navigation a.active {
+    background-color: #008050;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+.navigation li {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+    text-align: center;
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation a.active {
+    border-bottom: none;
+}
+
+.navigation li.active {
+    background-color: #008050;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+main {
+	padding: 20px;
+    gap: 20px;
+}
+
+.image-slider {
+	position: relative;
+	text-align: center;
+}
+.arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: #007bff;
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.arrow.left {
+	left: 10%;
+}
+.arrow.right {
+	right: 10%;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+	background: #f8f9fa;
+    z-index: 3;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    text-decoration: none;
+}
+
+.social-link {
+    margin-top: 30px;
+	text-decoration: none;
+	color: #007bff;
+	font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.social-link:hover {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.current-status {
+	text-align: center;
+    background-color: rgba(15, 14, 159, 1);
+    color: white;
+    padding: 10px;
+    border-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.date-info {
+	color: #757575;
+	font-size: 0.8em;
+}
+.route-container {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 10px;
+}
+.mains-route {
+	text-align: center;
+}
+
+.route-plan {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.green {
+	background-color: #228B22;
+}
+.red {
+	background-color: #D32F2F;
+}
+s {
+	text-decoration: line-through;
+	color: #D32F2F;
+}
+
+.circle-pic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em; /* Diamètre du cercle */
+    height: 1.1em; /* Diamètre du cercle */
+    border-radius: 50%; /* Rend l'élément circulaire */
+    color: white; /* Couleur du texte */
+    font-weight: bold;
+    text-align: center;
+    font-size: auto;
+    border: 2px solid; /* Bordure ajustée dynamiquement */
+}
+
+.barre {
+    height: 100%;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.bottom {
+    width: 100%;
+    height: auto;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+	max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        /* Overlay sombre */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Couche sombre */
+        }
+
+        /* Texte centré */
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 3em;
+            background: rgba(15, 14, 159, 0.7);
+            padding: 0.5em 1em;
+            border-radius: 50px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1.5s forwards;
+        }
+    
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Deviens visible */
+                rotate: 360deg;
+            }
+        }
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+figure {
+    margin: 0.2em 40px;
+    height: 200%;
+    width: 200%;
+}
+
+.section {
+    height: auto;
+    padding: 32px;
+    font-size: 1em;
+    text-align: left;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    .section {
+        padding: 0;
+
+    }
+
+    .section h4 {
+        margin-left: 10px;
+    }
+}
+
+.test {
+	border: 1px solid cyan;
+}
+
+.chiffre-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.sous-chiffre-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 50%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    height: 100%;
+}
+
+.data-preci {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 100%;
+}
+
+.gros-chiffre {
+    font-size: 2em;
+}
+
+.mini-chiffre {
+    font-size: auto
+}
+
+.unite {
+    color: #AAA;
+}
+
+.classements-fréquentation {
+    width: 100%;
+    align-items: left;
+    overflow: hidden;
+}
+
+.classements-fréquentation::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Remplit parfaitement le parent */
+    background-image: url('images/logo/Navig.png');
+    background-repeat: repeat;
+    background-size: 80px;
+    z-index: -1; /* Sous le texte */
+    opacity: 0.2; /* Optionnel pour effet léger */
+    animation: scroll-background 10s linear infinite;
+    pointer-events: none; /* Ne gêne pas les interactions */
+  }
+
+  /* ✅ Animation du motif qui se déplace vers le haut */
+@keyframes scroll-background {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -80px -80px; /* Monte de 80px, soit la taille d'une "case" */
+    }
+  }
+
+.classements-fréquentation li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.bar {
+    height: 1em;
+    margin: 0 10px;
+    right: 30%;
+    border: solid black;
+    animation: slideIn 1s ease-out forwards;
+    overflow: hidden;
+}
+
+.classements-fréquentation.RATP li .bar {
+    border: solid black;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.number {
+    font-size: auto;
+    font-weight: bold;
+    float: right;
+}
+
+.carre {
+    max-width: 300px;
+    height: auto;
+    background-color: solid white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid transparent; /* Bordure invisible par défaut */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border 0.1s ease-in-out;
+    border-radius: 8px; /* Coins légèrement arrondis */
+}
+
+.carre:hover {
+    transform: translateY(-8px); /* Légère élévation */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
+}
+
+.carre:active {
+    transform: translateY(2px); /* Effet d'enfoncement */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Réduit l'ombre */
+    border: 3px solid black; /* Bordure noire qui apparaît */
+}
+
+    /* Miniatures */
+    .float-image {
+        max-height: 150px;
+        cursor: pointer;
+      }
+  
+      /* SLIDER */
+      .slider {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        display: none; /* Caché au début */
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    
+    .slider img {
+        width: auto;
+        height: auto;
+        max-width: 95vw;
+        max-height: 95vh;
+        align-self: center;
+        justify-self: center;
+    }
+    
+/* Boutons circulaires (fermeture et navigation) */
+.close-btn, .nav-btn {
+    position: absolute;
+    color: white;
+    text-shadow: 3em;
+    font-size: 3em; /* Taille de la police (en em pour plus de flexibilité) */
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation douce */
+    z-index: 99999;
+    background-color: rgba(25, 25, 25, 0.5);
+    padding: 0 0.25em;
+}
+    
+    .nav-btn:hover, .close-btn:hover {
+        background-color: rgba(25, 25, 25, 1);
+        transform: scale(1.1); /* Légèrement plus gros pour effet visuel */
+    }
+    
+    .close-btn {
+        top: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 0.2em;
+        border-radius: 50%;
+    }
+
+        .close-btn:hover {
+            background-color: rgba(0, 0, 0, 0);
+        }
+    
+    .nav-btn.prev {
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .nav-btn.next {
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+#animation-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Pour ne pas bloquer les clics */
+  display: none; /* Caché au départ */
+  z-index: 9999;
+}
+
+#animated-image {
+  width: 50px; /* Petite taille de base */
+  height: 50px;
+  opacity: 0; /* Invisible au départ */
+  transition: transform 3s ease-out 2s fowards, opacity 0s ease-out;
+  animation: none; /* Pas d'animation au départ */
+}
+
+.toggle-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 3em;
+    z-index: 9;
+}
+
+.toggle-button:hover {
+    background-color: #45a049;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #ddd;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 35px 10px 32px 32px;
+    border-radius: 0 0 3em 3em;
+    margin-top: -25px;
+    z-index: 5;
+}
+
+.panel.open {
+    max-height: 100px; /* Ajuster selon le contenu */
+    padding: 0;
+}
+
+/* Rotation infinie */
+@keyframes spin {
+  from { transform: rotate(0deg) scale(0); }
+  to { transform: rotate(3000deg) scale(600); } /* Grossit et tourne */
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    main {
+        padding: 5px;
+    }
+    .navigation ul {
+        white-space: nowrap; /* Empêche le retour à la ligne */
+        overflow-x: auto; /* Permet de scroller horizontalement */
+        scrollbar-width: thin; /* Rendre la scrollbar discrète (Firefox) */
+        -webkit-overflow-scrolling: touch; /* Amélioration pour mobiles */
+    }
+    nav ul {
+        white-space: nowrap; /* Empêche le retour à la ligne */
+        overflow-x: auto; /* Permet de scroller horizontalement */
+        scrollbar-width: thin; /* Rendre la scrollbar discrète (Firefox) */
+        -webkit-overflow-scrolling: touch; /* Amélioration pour mobiles */
+        padding-left: 10px;
+    }
+    .header-nav {
+        padding-bottom: 0;
+    }
+    .section {
+        padding: 10px;
+    }
+    .main-line {
+        flex-direction: column;
+    }
+    .Bus-logo {
+        display: flex;
+        justify-content: left;
+    }
+    .route-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 5px;
+    }
+    .mains-route{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .bloc.image-overlay {
+        width: 100%;
+    }
+    .text-image .image {
+        flex-wrap: wrap;
+        float: none;
+    }
+    .text-image {
+        display: inline;
+    }
+    .image {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 100%;
+        height: 100%;
+    }
+    .tri-imagequibug {
+        width: 100%;
+    }
+    .classements-fréquentation li {
+        display: flex;
+        align-items: center;
+        margin: 3px 0;
+    }
+    .classements-fréquentation ul {
+        padding-left: 20px;
+    }
+    .tabs-desserte {
+        flex-direction: column;
+    }
+    .tab {
+        transform: translateY(-0.3px); /* Légère élévation */
+    }
+    .tab:active{
+        transform: translate(0, 0); /* Légère élévation */
+    }
+    .tab.active {
+        transform: translateY(6px); /* Effet d'enfoncement */
+    }
+    .subtab {
+        transform: translateY(0.3px); /* Légère élévation */
+    }
+    .subtab:active{
+        transform: translate(0, 0); /* Légère élévation */
+    }
+    .subtab.active {
+        transform: translateY(-6px); /* Effet d'enfoncement */
+    }
+}

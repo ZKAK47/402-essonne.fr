@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fréquentation</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png"/>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+	    <div class="image-container">
+        <img src="/assets/images/photo/Valideur_Navigo_IDFM.jpg" class="slider-image" alt="Valideur IDFM">
+        <div class="overlay"></div>
+        <div class="text">Fréquentation</div>
+    </div>
+    <nav class="navigation">
+        <ul>
+            <a href="/Desserte/index.html"><li>Desserte</li></a>
+            <a href="/Histoire/index.html"><li>Histoire</li></a>
+            <a class="active"><li class="active">Fréquentation</li></a>
+			<a href="/Quizz/index.html"><li>Quizz</li></a>
+        </ul>
+    </nav>
+	</div>
+    </header>
+    <main>
+        <div class="tabs-container">
+            <div style="display: flex; justify-content: space-around; border: none;">
+            <button data-tab-target="#Frequentation" data-tab-content class="tab">Fréquentation <span class="Indice-bus">402</span></button>
+            <button data-tab-target="#Classements" data-tab-content class="tab">Classements</button>
+            </div>
+            <div class="tab-contents">
+        <div id=Frequentation class="section" data-tab-content>
+            <h1>Données de validations</h1>
+            <div class="updated" style="text-align: center;">de Septembre 2023 à Septembre 2024</div>
+            <div class="chiffre-container">
+                <div class="sous-chiffre-container" style="height: 50%;">
+                    <span class="data-preci">
+                        <h3>Fréquentation 2023-2024</h3>
+                        <div class="gros-chiffre" style="color:#E2001A;">
+                            2 400 000 <!--2401917-->
+                        </div>
+                    <span>
+                        <span style="display: flex; flex-direction: column;">
+                            <div>
+                            <div class="unite">
+                                <u>validations</u> en 2024
+                                </div>
+                            <span style="display: flex; justify-content: center;">
+                                <div style="margin-right: 10%;">
+                                <div>
+                                    <span class="Indice-bus">402</span>
+                                </div>
+                                <div>
+                                    2 100 000 <!--2 102 710-->
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span class="Indice-bus">420</span>
+                                </div>
+                                <div>
+                                    300 000 <!--299207-->
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="data-preci">
+                        <h3>Fréquentation prévue <span class="Indice-bus">Tzen4</span></h3>
+                        <div class="gros-chiffre" style="color:#B6BD00;">
+                            17 000 000
+                        </div>
+                    <span>
+                        <span style="display: flex; flex-direction: column;">
+                            <div>
+                            <div class="unite">
+                                <u>passagers attendus</u> par ans
+                                </div>
+                                <div style="height: 200%;">
+                                    sur le <span class="Indice-bus">Tzen4</span>
+                                </div>
+                            </div>
+                            </span>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <div class="sous-chiffre-container" style="height: 50%;">
+                    <span class="data-preci">
+                        <div class="gros-chiffre" style="color:#E2001A;">
+                            6500 <!--6581,7452055-->
+                        </div>
+                    <span>
+                        <span style="display: flex; flex-direction: column;">
+                            <div>
+                            <div class="unite">
+                                <u>validations</u> par jours
+                                </div>
+                            <span style="display: flex; justify-content: center;">
+                                <div style="margin-right: 10%;">
+                                <div>
+                                    <span class="Indice-bus">402</span>
+                                </div>
+                                <div>
+                                    5 700 <!--5762-->
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span class="Indice-bus">420</span>
+                                </div>
+                                <div>
+                                    819 <!--819,7452055-->
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="data-preci">
+                        <div class="gros-chiffre" style="color:#B6BD00;">
+                            47 000 <!--6581,7452055-->
+                        </div>
+                    <span>
+                        <span style="display: flex; flex-direction: column;">
+                            <div>
+                            <div class="unite">
+                                <u>passagers attendus</u> par jours
+                                </div>
+                                <div style="height: 200%;">
+                                    sur le <span class="Indice-bus">Tzen4</span>
+                                </div>
+                            </div>
+                            </span>
+                        </div>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                </div>
+
+                <!--Début Classements-->
+                <div id="Classements" class="section" data-tab-content>
+                    <h1>Classements de fréquentation des lignes de bus d'Île-de-France</h1>
+                    <div class="updated" style="text-align: center;">de Septembre 2023 à Septembre 2024</div>
+                    <div id="ClassementsNATP" data-tab-content class="section" style="background-color: #67b4e7; margin-bottom: 0;">
+                        <h4>Par rapport aux lignes non-RATP</h4>
+                        <div class="classements-fréquentation">
+                            <ul>
+                                <li>
+                                    <div style="display: flex; flex-direction: column;">
+                                    <picto>427</picto><div style="font-size: 75%; white-space: nowrap;">(<picto>J1 J2</picto>)</div>
+                                </div>
+                                    <div class="bar" style="color: black; width: 100%; background:#FFCE00;">
+                                        <span class="number">4 282 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>6202</picto>
+                                    <div class="bar" style="color: white; width: 77.4%;background: #0064B0;">
+                                    <span class="number">3 317 000</span></div>
+                                </li>
+                                <li>
+                                    <div style="display: flex; flex-direction: column;">
+                                    <picto>402</picto>
+                                    <picto>420</picto>
+                                </div>
+                                    <div class="bar" style="color: white; width: 77%; background: #E3051C;">
+                                    <span class="number">3 302 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>6201</picto>
+                                    <div class="bar" style="color: white; width: 76%;background: #E3051C;">
+                                    <span class="number">3 270 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>A (MeO)</picto>
+                                    <div class="bar" style="color: white; width: 70%;background: #E3051C;">
+                                    <span class="number">2 999 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>15 (TE)</picto>
+                                    <div class="bar" style="color: white; width: 69.7%;background: #0064B0;">
+                                    <span class="number">2 987 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>609</picto>
+                                    <div class="bar" style="color: white; width: 64%;background: #C04191;">
+                                    <span class="number">2 739 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>613</picto>
+                                    <div class="bar" style="color: white; width: 63%;background: #00814F;">
+                                    <span class="number">2 738 000</span></div>
+                                </li>
+                                <li><div style="display: flex; flex-direction: column;">
+                                    <picto>1201</picto> <div style="font-size: 80%;">(<picto>45 (CPC)</picto>)</div>
+                                </div>
+                                    <div class="bar" style="color: white; width: 54%;background: #C04191;">
+                                    <span class="number">2 301 000</span></div>
+                                </li>
+                                <li>
+                                    <div style="display: flex; flex-direction: column;">
+                                    <picto>91.10</picto>
+                                    <picto>91.06</picto>
+                                    <picto>9111</picto>
+                                </div>
+                                    <div class="bar" style="color: black; width: 48%;background: #98D4E2;">
+                                    <span class="number">2 046 000<!--T1, T2 et T3 2024 : 1 552 520|9106= 1202447; 9110= 197909; 9111= 162164--></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <picto>2234</picto>
+                                    <div class="bar" style="color: white; width: 43%;background: #662483;">
+                                    <span class="number">1 864 000</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="ClassementsRATP" data-tab-content class="section" style="background-color: #00c4b4; color: white; margin-bottom: 0;">
+                        <h4>Par rapport aux lignes RATP</h4>
+                        <div class="classements-fréquentation RATP">
+                            <ul>
+                                <li>
+                                    <picto>TVM</picto>
+                                    <div class="bar" style="color: white; width: 100%; background:#0064b0;">
+                                    <span class="number">18 279 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>62</picto>
+                                    <div class="bar" style="color: white; width: 55%;background: #8d5e2a;">
+                                    <span class="number">10 215 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>103</picto>
+                                    <div class="bar" style="color: black; width: 34%;background: #f28e42;">
+                                    <span class="number">6 322 000</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <picto>150</picto>
+                                    <div class="bar" style="color: black; width: 33%;background: #f3a4ba;">
+                                    <span class="number">6 014 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>60</picto>
+                                    <div class="bar" style="color: white; width: 32%;background: #E3051C;">
+                                    <span class="number">5 987 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>272</picto>
+                                    <div class="bar" style="color: black; width: 30%;background: #f28e42;">
+                                    <span class="number">5 523 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>26</picto>
+                                    <div class="bar" style="color: black; width: 30%;background: #f28e42;">
+                                    <span class="number">5 434 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>38</picto>
+                                    <div class="bar" style="color: white; width: 29.5%;background: #0064B0;">
+                                    <span class="number">5 338 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>92</picto>
+                                    <div class="bar" style="color: black; width: 29%;background: #FFCE00;">
+                                    <span class="number">5 309 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>T10</picto>
+                                    <div class="bar" style="color: white; width: 26%;background: #9F9825;">
+                                    <span class="number">4 932 000</span></div>
+                                </li>
+                                <li>
+                                    <p>(10+)</p>
+                                    <div class="bar" style="color: black; width: 22%;background: white;">
+                                    <span class="number">5 200 000 à 3 436 000</span></div>
+                                </li>
+                                <li>
+                                    <picto>378</picto>
+                                    <div class="bar" style="color: white; width: 18%;background: #00814f;">
+                                    <span class="number">3 436 000</span></div>
+                                </li>
+                                <li>
+                                    <div style="display: flex; flex-direction: column;">
+                                    <picto>402</picto>
+                                    <picto>420</picto>
+                                </div>
+                                    <div class="bar" style="color: white; width: 17%; background: #E3051C;">
+                                    <span class="number">3 302 000</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sub-tabs" style="display: flex; justify-content: space-around;">
+                        <button data-tab-target="#ClassementsNATP" class="subtab NATP">Échelle non-RATP</button>
+                        <button data-tab-target="#ClassementsRATP" class="subtab RATP">Échelle RATP</button>
+                    </div>
+                </div>
+    </div>
+</div>
+</main>
+<script src="/assets/scripts/slider.js"></script>
+<script src="/assets/scripts/disclaimer.js"></script>
+<script src="/assets/scripts/apixtract.js"></script>
+<script src="/assets/scripts/sourcemedias.js"></script>
+<a href="/index.html"><footer class="social-link">Retour à l'Accueil</footer></a>
+</body>
+</html>

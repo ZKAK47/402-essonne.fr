@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Slider d'Images</title>
+  <style>
+    body { margin: 0; padding: 0; }
+
+    /* Miniatures */
+    .slider-image {
+      width: 150px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    /* SLIDER */
+    .slider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      display: none; /* Caché au début */
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .slider img {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .close-btn, .nav-btn {
+      position: absolute;
+      color: white;
+      font-size: 50px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .close-btn { top: 20px; right: 30px; }
+    .nav-btn.prev { left: 30px; top: 50%; transform: translateY(-50%); }
+    .nav-btn.next { right: 30px; top: 50%; transform: translateY(-50%); }
+  </style>
+</head>
+<body>
+
+<!-- Tes images -->
+<img src="../assets/images/photo/402 Citaro G C2.jpg" alt="Iage" class="slider-image">
+<img src="../assets/images/photo/402 GX427BHNS.jpg" alt="Imag" class="slider-image">
+<img src="https://via.placeholder.com/800x600" alt="Ima" class="slider-image">
+
+<!-- SLIDER -->
+<div id="slider" class="slider">
+  <span id="close-btn" class="close-btn">&times;</span>
+  <span id="prev-btn" class="nav-btn prev">&#10094;</span>
+  <img id="slider-image" src="" alt="Grande image">
+  <span id="next-btn" class="nav-btn next">&#10095;</span>
+</div>
+
+<script>
+  // Sélectionne toutes les images cliquables
+  const images = Array.from(document.querySelectorAll('.slider-image'));
+  const slider = document.getElementById('slider');
+  const sliderImage = document.getElementById('slider-image');
+  const closeBtn = document.getElementById('close-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const prevBtn = document.getElementById('prev-btn');
+
+  let currentIndex = 0;
+
+  // Quand on clique sur une image
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      sliderImage.src = img.src; // Met l'image cliquée
+      slider.style.display = 'flex'; // Affiche le slider
+    });
+  });
+
+  // Bouton fermer
+  closeBtn.addEventListener('click', () => {
+    slider.style.display = 'none';
+  });
+
+  // Image suivante
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    sliderImage.src = images[currentIndex].src;
+  });
+
+  // Image précédente
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    sliderImage.src = images[currentIndex].src;
+  });
+
+  // Navigation clavier (optionnel)
+  document.addEventListener('keydown', (e) => {
+    if (slider.style.display === 'flex') { // Si slider ouvert
+      if (e.key === 'Escape') slider.style.display = 'none';
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'ArrowLeft') prevBtn.click();
+    }
+  });
+</script>
+
+</body>
+</html>
